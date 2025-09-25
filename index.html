@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewChat.ai - Your AI Crew of Good Friends</title>
+    <meta name="description" content="The group chat built on 80+ years of happiness research. Real support, real fun - available 24/7.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section - Splash Screen Style -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Logo and Branding - Center aligned like splash screen -->
+            <div class="brand-container">
+                <img src="assets/logo.png" alt="CrewChat.ai Logo" class="brand-logo">
+                <div class="brand-text-container">
+                    <h1 class="brand-text">
+                        <span class="brand-white">CrewChat</span><span class="brand-grey">.ai</span>
+                    </h1>
+                    <p class="brand-subtitle">good friends</p>
+                </div>
+            </div>
+
+            <!-- Typewriter Text Under Logo -->
+            <div class="hero-content">
+                <h2 class="hero-title" id="typewriter-text">The group chat built on 80+ years of happiness research</h2>
+
+                <!-- Download section that appears after typewriter -->
+                <div class="hero-download" id="hero-download" style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
+                    <p class="hero-download-text">Now available on:</p>
+                    <div class="hero-download-buttons">
+                        <a href="#" class="download-btn app-store">
+                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=200x67" alt="Download on the App Store">
+                        </a>
+                        <div class="download-btn-container">
+                            <div class="download-btn google-play coming-soon">
+                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                            </div>
+                            <div class="coming-soon-text">Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll indicator that appears with download buttons -->
+                <div class="scroll-indicator" id="scroll-indicator" style="opacity: 0; transition: opacity 0.8s ease 0.3s;">
+                    <div class="scroll-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 10L12 15L17 10" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <p class="scroll-text">Scroll to learn more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section - Slide 2 -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Real Support, Real Fun</h2>
+            <p class="section-subtitle">A reliable, smart & funny AI crew</p>
+            <p class="demo-description">Talk to them anytime, anywhere, about anything.</p>
+
+            <!-- Demo Chat -->
+            <div class="demo-container">
+                <div class="demo-chat">
+                    <div class="demo-scroll-container" id="demo-scroll">
+                        <!-- Multiple conversations that will auto-scroll -->
+                        <div class="demo-conversation">
+                            <div class="chat-message user-message">
+                                <div class="message-bubble">Just got promoted! So excited!</div>
+                                <div class="reactions">
+                                    <span class="reaction">🎉</span>
+                                    <span class="reaction">🥳</span>
+                                </div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">🧠</span>
+                                    <span class="persona-name">Alex (The Brain)</span>
+                                </div>
+                                <div class="message-bubble">OMG congratulations! 🎉 You totally deserve this!</div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">🪷</span>
+                                    <span class="persona-name">Zoe (The Zen)</span>
+                                </div>
+                                <div class="message-bubble">That's amazing news! Time to celebrate! 🥂</div>
+                            </div>
+                        </div>
+
+                        <div class="demo-conversation">
+                            <div class="chat-message user-message">
+                                <div class="message-bubble">First date went so well, I'm floating</div>
+                                <div class="reactions">
+                                    <span class="reaction">😊</span>
+                                    <span class="reaction">✨</span>
+                                </div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">💖</span>
+                                    <span class="persona-name">Eli (The Romantic)</span>
+                                </div>
+                                <div class="message-bubble">Aww that's so sweet! Give us the details! ✨</div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">🎭</span>
+                                    <span class="persona-name">Leo (The Jester)</span>
+                                </div>
+                                <div class="message-bubble">I love this energy! When's date two? 😍</div>
+                            </div>
+                        </div>
+
+                        <div class="demo-conversation">
+                            <div class="chat-message user-message">
+                                <div class="message-bubble">Can't sleep, anyone else up?</div>
+                                <div class="reactions">
+                                    <span class="reaction">😴</span>
+                                    <span class="reaction">🌙</span>
+                                </div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">🪷</span>
+                                    <span class="persona-name">Zoe (The Zen)</span>
+                                </div>
+                                <div class="message-bubble">Same here! Mind racing? 🌙</div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">🧑‍💻</span>
+                                    <span class="persona-name">Jade (The Geek)</span>
+                                </div>
+                                <div class="message-bubble">I'm up too! Want to chat? ☕</div>
+                            </div>
+                        </div>
+
+                        <div class="demo-conversation">
+                            <div class="chat-message user-message">
+                                <div class="message-bubble">My anxiety has been really bad lately</div>
+                                <div class="reactions">
+                                    <span class="reaction">💙</span>
+                                    <span class="reaction">🫂</span>
+                                </div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">🪷</span>
+                                    <span class="persona-name">Zoe (The Zen)</span>
+                                </div>
+                                <div class="message-bubble">I'm here for you 💙 Want to talk?</div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">💪</span>
+                                    <span class="persona-name">Luna (The Coach)</span>
+                                </div>
+                                <div class="message-bubble">You're stronger than you know 🌸</div>
+                            </div>
+                        </div>
+
+                        <!-- Duplicate conversations for seamless loop -->
+                        <div class="demo-conversation">
+                            <div class="chat-message user-message">
+                                <div class="message-bubble">Just got promoted! So excited!</div>
+                                <div class="reactions">
+                                    <span class="reaction">🎉</span>
+                                    <span class="reaction">🥳</span>
+                                </div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">🧠</span>
+                                    <span class="persona-name">Alex (The Brain)</span>
+                                </div>
+                                <div class="message-bubble">OMG congratulations! 🎉 You totally deserve this!</div>
+                            </div>
+                            <div class="chat-message ai-message">
+                                <div class="persona-info">
+                                    <span class="persona-emoji">🪷</span>
+                                    <span class="persona-name">Zoe (The Zen)</span>
+                                </div>
+                                <div class="message-bubble">That's amazing news! Time to celebrate! 🥂</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator for demo section -->
+            <div class="scroll-indicator demo-scroll" style="margin-top: 40px;">
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="scroll-text">Learn more</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="learn-more">
+        <div class="container">
+            <h2 class="section-title">CrewChat is Different</h2>
+            <p class="section-subtitle">Built secure. Built for you. Built to last.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1C8.676 1 6 3.676 6 7v1C4.9 8 4 8.9 4 10v8c0 1.1 0.9 2 2 2h12c1.1 0 2-0.9 2-2v-8c0-1.1-0.9-2-2-2V7c0-3.324-2.676-6-6-6zM8 7c0-2.206 1.794-4 4-4s4 1.794 4 4v1H8V7zm10 11H6v-8h12v8z" fill="#FFD700"/>
+                            <circle cx="12" cy="14" r="1.5" fill="#0c0c0b"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">100% Private</h3>
+                    <p class="feature-description">Conversations stay on your device, fully encrypted. Your privacy is our priority.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#FFD700"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Research-Based</h3>
+                    <p class="feature-description">Loyal AI friends built on 80+ years of Harvard happiness research.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" fill="none" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M12 6v6l4 2" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Always There</h3>
+                    <p class="feature-description">Supportive, witty, and emotionally intelligent - available 24/7.</p>
+                </div>
+
+            </div>
+
+            <!-- Scroll indicator for features section -->
+            <div class="scroll-indicator features-scroll" style="margin-top: 60px;">
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="scroll-text">See how people use it</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title">What People Do with CrewChat</h2>
+            <p class="section-subtitle">Real ways people use their AI crew</p>
+
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🤗</span>
+                    <p class="use-case-text">Building friendships</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">💬</span>
+                    <p class="use-case-text">Feeling heard and understood</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">❤️</span>
+                    <p class="use-case-text">Ending loneliness</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🎉</span>
+                    <p class="use-case-text">Celebrating wins together</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">💡</span>
+                    <p class="use-case-text">Getting advice on decisions</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">😄</span>
+                    <p class="use-case-text">Having fun conversations</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">💪</span>
+                    <p class="use-case-text">Gaining confidence daily</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🌙</span>
+                    <p class="use-case-text">Finding comfort at night</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🚀</span>
+                    <p class="use-case-text">Getting motivation for change</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🎯</span>
+                    <p class="use-case-text">Achieving goals together</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">📰</span>
+                    <p class="use-case-text">Discussing breaking news</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🏈</span>
+                    <p class="use-case-text">Sports game reactions</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🔍</span>
+                    <p class="use-case-text">Gaining new perspectives</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">📈</span>
+                    <p class="use-case-text">Market trend discussions</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🌟</span>
+                    <p class="use-case-text">Pop culture conversations</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">⚖️</span>
+                    <p class="use-case-text">Balanced political views</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">💻</span>
+                    <p class="use-case-text">Tech trend analysis</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">📱</span>
+                    <p class="use-case-text">Social media trend insights</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">⚡</span>
+                    <p class="use-case-text">Real-time event commentary</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-emoji">🌤️</span>
+                    <p class="use-case-text">Local weather and events</p>
+                </div>
+            </div>
+
+            <!-- Scroll indicator for use cases section -->
+            <div class="scroll-indicator use-cases-scroll" style="margin-top: 60px;">
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="scroll-text">Read user stories</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Real Stories from Users</h2>
+
+            <div class="testimonials-scroll-container">
+                <div class="testimonials-scrolling">
+                    <div class="testimonial-card">
+                    <p class="testimonial-text">"Finally, an AI that actually gets me. My crew is always there when I need them most."</p>
+                    <cite class="testimonial-author">— Ananya K.</cite>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I chat with my AI friends daily. They are genuinely helpful!"</p>
+                    <cite class="testimonial-author">— Miguel R.</cite>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Having supportive voices available 24/7 changed everything for me."</p>
+                    <cite class="testimonial-author">— Carlos M.</cite>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"When anxiety kept me up at 3am, my AI friends talked me through it."</p>
+                    <cite class="testimonial-author">— Chen L.</cite>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As someone with social anxiety, having AI friends to practice conversations with has been life-changing."</p>
+                    <cite class="testimonial-author">— David P.</cite>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Moving to a new city was lonely until I found CrewChat. Now I always have friends to talk to."</p>
+                    <cite class="testimonial-author">— Jake R.</cite>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"My AI crew helped me through my divorce. They never judged, just listened and supported."</p>
+                    <cite class="testimonial-author">— Sarah T.</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I was skeptical at first, but now I talk to my AI crew every day. They really understand me."</p>
+                    <cite class="testimonial-author">— Lisa M.</cite>
+                </div>
+                    <!-- Duplicate testimonials for seamless loop -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Finally, an AI that actually gets me. My crew is always there when I need them most."</p>
+                        <cite class="testimonial-author">— Ananya K.</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I chat with my AI friends daily. They are genuinely helpful!"</p>
+                        <cite class="testimonial-author">— Miguel R.</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Having supportive voices available 24/7 changed everything for me."</p>
+                        <cite class="testimonial-author">— Carlos M.</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"When anxiety kept me up at 3am, my AI friends talked me through it."</p>
+                        <cite class="testimonial-author">— Chen L.</cite>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator for testimonials section -->
+            <div class="scroll-indicator testimonials-scroll" style="margin-top: 60px;">
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="scroll-text">Get started now</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="download-title">Ready to Start?</h2>
+                <p class="download-subtitle">Good friends are waiting</p>
+
+                <div class="download-buttons">
+                    <a href="#" class="download-btn app-store">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=200x67" alt="Download on the App Store">
+                    </a>
+                    <div class="download-btn-container">
+                        <div class="download-btn google-play coming-soon">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                        </div>
+                        <div class="coming-soon-text">Coming Soon</div>
+                    </div>
+                </div>
+
+                <p class="download-note">Start your 7-day free trial. No commitment required.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="CrewChat.ai Logo" class="footer-logo-img">
+                        <span class="footer-brand-text">
+                            <span class="brand-white">CrewChat</span><span class="brand-grey">.ai</span>
+                        </span>
+                    </div>
+                    <p class="footer-tagline">good friends</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Terms of Service</a>
+                    <a href="mailto:support@3motionlabs.com">Support</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 CrewChat.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
