@@ -930,6 +930,16 @@ section {
     font-weight: 600;
 }
 
+.article-content a {
+    color: #FFD700;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.article-content a:hover {
+    color: #FFF;
+}
+
 .article-content ul {
     margin: 16px 0 32px 24px;
     list-style: disc;
