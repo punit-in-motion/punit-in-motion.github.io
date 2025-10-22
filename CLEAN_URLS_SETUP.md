@@ -104,26 +104,26 @@ GitHub Pages will automatically process the `_config.yml` and enable clean URLs.
 
 ## Important Notes
 
-### Current Behavior:
-- `/blog` → Loads blog.html ✅
-- `/blog.html` → Also loads blog.html ✅
-- Both URLs work simultaneously
+### Current Behavior (With 301 Redirects):
+- ✅ `/blog` → Loads blog page (clean URL)
+- ✅ `/blog.html` → **301 Redirects to** `/blog` (SEO-friendly permanent redirect)
+- All .html URLs automatically redirect to clean versions
 
-### Optional Future Improvement:
-Add 301 redirects from .html to clean URLs:
+### How It Works:
+Jekyll's `jekyll-redirect-from` plugin creates meta refresh tags and client-side redirects that function as 301 redirects. Each page has front matter like:
 ```yaml
-# In _config.yml
-plugins:
-  - jekyll-redirect-from
-
-# Then in each page's front matter:
 ---
+permalink: /blog/
 redirect_from:
   - /blog.html
 ---
 ```
 
-This would redirect `/blog.html` → `/blog` automatically.
+This ensures:
+- Clean URLs are the canonical version
+- Old .html links still work (but redirect)
+- Search engines understand the permanent redirect
+- No duplicate content issues
 
 ## Troubleshooting
 

@@ -31,78 +31,47 @@ redirect_from:
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./styles.css?v=2">
+    <link rel="stylesheet" href="/styles.css?v=2">
 
     <!-- Apple -->
-    <link rel="apple-touch-icon" href="./assets/logo.png">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/logo.png">
-    <style>
-        .privacy-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.8;
-        }
-        .privacy-content h1 {
-            color: #fff;
-            font-size: 36px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .privacy-content h2 {
-            color: #FFD700;
-            font-size: 24px;
-            margin-top: 40px;
-            margin-bottom: 16px;
-        }
-        .privacy-content h3 {
-            color: #fff;
-            font-size: 20px;
-            margin-top: 30px;
-            margin-bottom: 12px;
-        }
-        .privacy-content p, .privacy-content li {
-            color: #ddd;
-            font-size: 16px;
-            margin-bottom: 16px;
-        }
-        .privacy-content ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-        .privacy-content li {
-            margin-bottom: 8px;
-        }
-        .back-link {
-            display: inline-block;
-            color: #007AFF;
-            text-decoration: none;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        .effective-date {
-            background: rgba(255,215,0,0.1);
-            border: 1px solid rgba(255,215,0,0.3);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
     <!-- Google Analytics 4 - Single line to add to all pages -->
-    <script src="ga4-loader.js"></script>
+    <script src="/ga4-loader.js"></script>
 </head>
 <body>
-    <section style="background: #0c0c0b; min-height: 100vh; padding: 40px 0;">
-        <div class="privacy-content">
-            <a href="/" class="back-link">← Back to CrewChat.ai</a>
+    <!-- Header -->
+    <header class="blog-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="header-logo">
+                    <img src="/assets/logo.png" alt="CrewChat.ai Logo" class="header-logo-img">
+                    <span class="header-brand-text">
+                        <span class="brand-white">CrewChat</span><span class="brand-grey">.ai</span>
+                    </span>
+                </a>
+                <nav class="header-nav">
+                    <a href="/">Home</a>
+                    <a href="/blog">Blog</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-            <h1>Privacy Policy</h1>
+    <!-- Privacy Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="blog-hero-title">Privacy Policy</h1>
+            <p class="blog-hero-subtitle">How we protect and handle your data</p>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <section class="blog-article">
+        <div class="container">
+            <article class="article-content">
 
             <div class="effective-date">
                 <p><strong>Effective Date:</strong> December 1, 2024</p>
@@ -227,13 +196,39 @@ redirect_from:
 
             <p>For data protection inquiries in the European Union, you may also contact your local data protection authority.</p>
 
-            <hr style="border: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
-
-            <p style="text-align: center; color: #8e8e93; font-size: 14px;">
-                Last updated: December 1, 2024<br>
-                © 2024 3Motion Labs. All rights reserved.
-            </p>
+            </article>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo-container">
+                        <img src="/assets/logo.png" alt="CrewChat.ai Logo" class="footer-logo">
+                        <div>
+                            <div class="footer-brand-text">
+                                <span class="brand-white">CrewChat</span><span class="brand-grey">.ai</span>
+                            </div>
+                            <p class="footer-tagline">good friends</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <a href="/blog">Blog</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Terms of Service</a>
+                    <a href="mailto:support@3motionlabs.com">Support</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 CrewChat.ai. All rights reserved.</p>
+                <p class="footer-tagline-mobile">good friends</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
