@@ -1,15 +1,15 @@
 # Enable Clean URLs - Remove .html extension
-# Note: GitHub Pages doesn't support .htaccess
-# This file is for reference if you move to a different host
+# Note: GitHub Pages doesn't support .htaccess (uses Jekyll redirects instead)
+# This file is for reference if you move to a different host (Apache)
 
 RewriteEngine On
 
-# Remove .html extension
+# 301 Redirect .html URLs to clean URLs (preserves SEO)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Serve .html files when clean URL is requested
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L,QSA]
-
-# Redirect .html URLs to clean URLs
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
-RewriteRule ^ %1 [R=301,L]

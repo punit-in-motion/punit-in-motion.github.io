@@ -7,13 +7,19 @@ permalink: pretty
 # Build settings
 markdown: kramdown
 
+# Plugins for 301 redirects
+plugins:
+  - jekyll-redirect-from
+
 # Exclude files from build
 exclude:
   - README.md
   - ANALYTICS_SETUP.md
   - README_ANALYTICS.md
   - SETUP_COMPLETE.md
+  - CLEAN_URLS_SETUP.md
   - ga4-header.html
+  - clean-url-handler.js
 
 # Keep .htaccess if it exists (for non-GitHub Pages hosting)
 include:
