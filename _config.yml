@@ -1,0 +1,20 @@
+# Jekyll Configuration for GitHub Pages
+# Enables clean URLs without .html extension
+
+# Permalink style - removes .html from URLs
+permalink: pretty
+
+# Build settings
+markdown: kramdown
+
+# Exclude files from build
+exclude:
+  - README.md
+  - ANALYTICS_SETUP.md
+  - README_ANALYTICS.md
+  - SETUP_COMPLETE.md
+  - ga4-header.html
+
+# Keep .htaccess if it exists (for non-GitHub Pages hosting)
+include:
+  - .htaccess
