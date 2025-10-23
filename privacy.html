@@ -74,7 +74,7 @@ redirect_from:
             <article class="article-content">
 
             <div class="effective-date">
-                <p><strong>Effective Date:</strong> December 1, 2024</p>
+                <p><strong>Effective Date:</strong> January 15, 2025</p>
             </div>
 
             <p>At CrewChat.ai ("we," "us," or "our"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and related services.</p>
@@ -85,8 +85,8 @@ redirect_from:
             <p>We collect minimal personal information necessary to provide our services:</p>
             <ul>
                 <li><strong>Basic Profile:</strong> First name, age range, and gender (optional)</li>
-                <li><strong>Account Information:</strong> Email address for account management</li>
-                <li><strong>Communication Data:</strong> Your conversations with AI personas (processed but not permanently stored)</li>
+                <li><strong>Account Information:</strong> Anonymous authentication ID for account management</li>
+                <li><strong>Communication Data:</strong> Your conversations with AI personas (stored securely to enable features like multi-device sync and proactive messaging)</li>
             </ul>
 
             <h3>Technical Information</h3>
@@ -109,16 +109,37 @@ redirect_from:
 
             <h2>3. Data Storage and Security</h2>
 
-            <h3>Local Storage</h3>
-            <p>Your conversation data is primarily stored locally on your device using industry-standard encryption. This ensures your privacy and gives you control over your data.</p>
+            <h3>Local and Cloud Storage</h3>
+            <p>Your conversation data is stored both locally and in the cloud to provide the best experience:</p>
+            <ul>
+                <li><strong>Local Storage:</strong> Conversations are saved on your device using industry-standard encryption for fast, offline access</li>
+                <li><strong>Cloud Storage:</strong> Conversations are also synced to secure cloud storage (Firebase Firestore) to enable:
+                    <ul>
+                        <li>Multi-device sync across your devices</li>
+                        <li>Proactive messaging when the app is closed</li>
+                        <li>Account recovery if you switch devices</li>
+                        <li>Advanced features like conversation summaries</li>
+                    </ul>
+                </li>
+            </ul>
 
-            <h3>Cloud Processing</h3>
-            <p>When you send messages to AI personas, your data is:</p>
+            <h3>Data Security</h3>
+            <p>We implement multiple layers of security to protect your data:</p>
             <ul>
                 <li>Encrypted in transit using TLS/SSL protocols</li>
-                <li>Processed by AI services to generate responses</li>
-                <li>Not permanently stored on our servers</li>
-                <li>Automatically deleted after processing</li>
+                <li>Encrypted at rest in Firebase Firestore</li>
+                <li>Access-controlled: Only you can access your conversations via authenticated requests</li>
+                <li>Regular security audits and monitoring</li>
+                <li>Industry-standard Firebase security rules</li>
+            </ul>
+
+            <h3>AI Processing</h3>
+            <p>When generating AI responses:</p>
+            <ul>
+                <li>Your recent conversation history is sent to AI services (OpenAI) to generate contextual responses</li>
+                <li>Older conversations are summarized into digests to protect your privacy</li>
+                <li>AI providers process data according to their privacy policies and do not use your data to train models</li>
+                <li>Data is transmitted over encrypted connections</li>
             </ul>
 
             <h2>4. Information Sharing</h2>
@@ -127,7 +148,14 @@ redirect_from:
 
             <p>We may share limited information with:</p>
             <ul>
-                <li><strong>Service Providers:</strong> Third-party services that help operate our app (e.g., RevenueCat for subscriptions, AI processing APIs)</li>
+                <li><strong>Service Providers:</strong> Third-party services that help operate our app:
+                    <ul>
+                        <li>RevenueCat for subscription management</li>
+                        <li>OpenAI for AI response generation</li>
+                        <li>Google Firebase for cloud storage and authentication</li>
+                        <li>Analytics services for app performance</li>
+                    </ul>
+                </li>
                 <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and users</li>
                 <li><strong>Business Transfers:</strong> In connection with mergers or acquisitions (with prior notice)</li>
             </ul>
@@ -136,20 +164,40 @@ redirect_from:
 
             <p>Our app integrates with the following third-party services:</p>
             <ul>
-                <li><strong>RevenueCat:</strong> Subscription management and analytics</li>
+                <li><strong>Google Firebase:</strong> Cloud database (Firestore), authentication, and cloud functions
+                    <ul>
+                        <li>Privacy Policy: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+                    </ul>
+                </li>
+                <li><strong>OpenAI:</strong> AI response generation
+                    <ul>
+                        <li>Privacy Policy: <a href="https://openai.com/privacy" target="_blank" rel="noopener">openai.com/privacy</a></li>
+                        <li>Note: OpenAI does not use your data to train models</li>
+                    </ul>
+                </li>
+                <li><strong>RevenueCat:</strong> Subscription management and analytics
+                    <ul>
+                        <li>Privacy Policy: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></li>
+                    </ul>
+                </li>
                 <li><strong>App Store/Google Play:</strong> Payment processing</li>
-                <li><strong>AI Processing APIs:</strong> Generate AI responses (data not retained)</li>
-                <li><strong>Analytics Services:</strong> App performance monitoring</li>
+                <li><strong>Firebase Analytics:</strong> App performance and usage monitoring</li>
             </ul>
 
             <h2>6. Your Rights and Choices</h2>
 
             <h3>Data Control</h3>
             <ul>
-                <li><strong>Access:</strong> View your stored data through app settings</li>
-                <li><strong>Deletion:</strong> Delete your account and associated data at any time</li>
-                <li><strong>Export:</strong> Request copies of your data</li>
-                <li><strong>Correction:</strong> Update your profile information</li>
+                <li><strong>Access:</strong> View your stored data through app settings or by contacting us</li>
+                <li><strong>Deletion:</strong> Delete your account and all associated data at any time:
+                    <ul>
+                        <li>Local conversation data is immediately deleted from your device</li>
+                        <li>Cloud data is permanently deleted from Firebase Firestore within 30 days</li>
+                    </ul>
+                </li>
+                <li><strong>Export:</strong> Request copies of your conversation data by contacting us at privacy@3motionlabs.com</li>
+                <li><strong>Correction:</strong> Update your profile information in app settings</li>
+                <li><strong>Opt-Out:</strong> Disable cloud sync in app settings (this will disable multi-device sync and proactive features)</li>
             </ul>
 
             <h3>Communication Preferences</h3>
@@ -169,11 +217,19 @@ redirect_from:
 
             <h2>9. Data Retention</h2>
 
-            <p>We retain your information only as long as necessary to provide our services or as required by law. When you delete your account:</p>
+            <p>We retain your information only as long as necessary to provide our services or as required by law:</p>
             <ul>
-                <li>Local conversation data is deleted from your device</li>
-                <li>Account information is removed from our systems</li>
-                <li>Some data may be retained for legal compliance</li>
+                <li><strong>Active Accounts:</strong> Conversation data is retained in cloud storage while your account is active</li>
+                <li><strong>Account Deletion:</strong> When you delete your account:
+                    <ul>
+                        <li>Local conversation data is immediately deleted from your device</li>
+                        <li>Cloud conversation data is permanently deleted within 30 days</li>
+                        <li>Account authentication data is removed from our systems</li>
+                        <li>Subscription records may be retained for legal compliance (up to 7 years)</li>
+                        <li>Anonymized analytics data may be retained for product improvement</li>
+                    </ul>
+                </li>
+                <li><strong>Inactive Accounts:</strong> Accounts inactive for more than 2 years may be automatically deleted</li>
             </ul>
 
             <h2>10. Changes to This Privacy Policy</h2>
