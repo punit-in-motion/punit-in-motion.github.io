@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "Y23SQH2MLE.com.threemotionlabs.crewchatai",
+        "paths": [
+          "/verify",
+          "/verify/*"
+        ]
+      }
+    ]
+  }
+}
