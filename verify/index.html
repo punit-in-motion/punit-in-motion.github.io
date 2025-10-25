@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify Email - CrewChat</title>
+  <meta name="description" content="Verifying your CrewChat account">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 64px;
+      margin-bottom: 20px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    p {
+      opacity: 0.9;
+      line-height: 1.6;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    .app-links {
+      margin-top: 30px;
+      display: none;
+    }
+
+    .app-links a {
+      display: inline-block;
+      margin: 10px;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    .app-links a:hover {
+      opacity: 1;
+    }
+
+    .app-links img {
+      height: 40px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">💬</div>
+    <h1>Verifying your email...</h1>
+    <p id="status">Opening CrewChat app</p>
+    <div class="spinner" id="spinner"></div>
+
+    <div class="app-links" id="appLinks">
+      <p style="margin-bottom: 15px;">Don't have the app yet?</p>
+      <a href="https://apps.apple.com/app/crewchat/id123456789" target="_blank" id="iosLink">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.threemotionlabs.crewchatai" target="_blank" id="androidLink">
+        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // Extract Firebase email link parameters from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const mode = urlParams.get('mode');
+      const oobCode = urlParams.get('oobCode');
+      const apiKey = urlParams.get('apiKey');
+      const continueUrl = urlParams.get('continueUrl');
+      const lang = urlParams.get('lang') || 'en';
+
+      // Log for debugging
+      console.log('Email verification parameters:', { mode, oobCode: oobCode ? 'present' : 'missing', apiKey });
+
+      // Detect platform
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+      const isAndroid = /android/i.test(userAgent);
+      const isMobile = isIOS || isAndroid;
+
+      // Build deep link with all Firebase parameters
+      let deepLink = 'crewchatai://verify';
+      const params = [];
+
+      if (mode) params.push(`mode=${encodeURIComponent(mode)}`);
+      if (oobCode) params.push(`oobCode=${encodeURIComponent(oobCode)}`);
+      if (apiKey) params.push(`apiKey=${encodeURIComponent(apiKey)}`);
+      if (continueUrl) params.push(`continueUrl=${encodeURIComponent(continueUrl)}`);
+      if (lang) params.push(`lang=${encodeURIComponent(lang)}`);
+
+      if (params.length > 0) {
+        deepLink += '?' + params.join('&');
+      }
+
+      console.log('Deep link:', deepLink);
+
+      // App Store URLs
+      const iosAppStore = 'https://apps.apple.com/app/crewchat/id123456789'; // TODO: Update with real App Store ID
+      const androidAppStore = 'https://play.google.com/store/apps/details?id=com.threemotionlabs.crewchatai';
+
+      // Update status message
+      const statusEl = document.getElementById('status');
+      const spinnerEl = document.getElementById('spinner');
+      const appLinksEl = document.getElementById('appLinks');
+
+      if (!isMobile) {
+        // Desktop - show app store links
+        statusEl.textContent = 'Please open this link on your mobile device';
+        spinnerEl.style.display = 'none';
+        appLinksEl.style.display = 'block';
+        return;
+      }
+
+      if (!oobCode) {
+        // Missing required parameter
+        statusEl.textContent = 'Invalid verification link';
+        spinnerEl.style.display = 'none';
+        document.querySelector('p').textContent = 'This link appears to be invalid or expired. Please request a new one from the app.';
+        return;
+      }
+
+      // Try to open the app
+      let appOpened = false;
+
+      // Method 1: Try deep link immediately
+      const tryOpenApp = () => {
+        try {
+          window.location.href = deepLink;
+          appOpened = true;
+
+          // If app doesn't open within 2 seconds, assume it's not installed
+          setTimeout(() => {
+            if (!appOpened) {
+              return; // App opened, do nothing
+            }
+
+            statusEl.textContent = "App not installed?";
+            spinnerEl.style.display = 'none';
+            appLinksEl.style.display = 'block';
+
+            // Auto-redirect to app store after showing message
+            setTimeout(() => {
+              if (isIOS) {
+                window.location.href = iosAppStore;
+              } else if (isAndroid) {
+                window.location.href = androidAppStore;
+              }
+            }, 2000);
+          }, 2500);
+        } catch (error) {
+          console.error('Error opening deep link:', error);
+          statusEl.textContent = 'Error opening app';
+          spinnerEl.style.display = 'none';
+          appLinksEl.style.display = 'block';
+        }
+      };
+
+      // Detect if user navigates away (app opened)
+      window.addEventListener('blur', () => {
+        appOpened = true;
+      });
+
+      // Wait a moment before attempting to open (better UX)
+      setTimeout(tryOpenApp, 500);
+
+      // Method 2: Universal Links / App Links (iOS/Android)
+      if (isIOS) {
+        // Try iOS Universal Link
+        const universalLink = `https://crewchat.ai/verify?${params.join('&')}`;
+        console.log('Trying iOS Universal Link:', universalLink);
+
+        // Create invisible iframe to attempt universal link
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = universalLink;
+        document.body.appendChild(iframe);
+
+        setTimeout(() => {
+          document.body.removeChild(iframe);
+        }, 2000);
+      }
+    })();
+  </script>
+</body>
+</html>
