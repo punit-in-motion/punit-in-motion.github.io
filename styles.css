@@ -871,10 +871,11 @@ section {
 /* Blog Article Styles */
 .blog-article {
     padding: 60px 20px 100px;
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .article-container {
-    max-width: 800px;
+    max-width: 720px;
 }
 
 .article-header {
@@ -884,7 +885,7 @@ section {
 }
 
 .article-title {
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 800;
     color: #1C1C1C;
     margin-bottom: 24px;
@@ -904,28 +905,28 @@ section {
 }
 
 .article-content {
-    font-size: 18px;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.75;
     color: #6B6B6B;
 }
 
 .article-intro {
-    font-size: 22px;
+    font-size: 18px;
     color: #1C1C1C;
     line-height: 1.7;
     margin-bottom: 32px;
     padding: 24px;
-    background: rgba(142, 125, 72, 0.1);
+    background: rgba(142, 125, 72, 0.08);
     border-left: 4px solid #8E7D48;
     border-radius: 4px;
 }
 
 .article-content h2 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
     color: #8E7D48;
-    margin-top: 48px;
-    margin-bottom: 16px;
+    margin-top: 40px;
+    margin-bottom: 14px;
 }
 
 .article-content p {
